@@ -1,7 +1,7 @@
 import './App.css';
 import Expenses from './components/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 const expenseArray = [];
  
 function App() {
