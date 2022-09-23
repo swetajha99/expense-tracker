@@ -7,8 +7,8 @@ import { useState,useEffect } from 'react';
 function App() {
    const getLocalItem = () =>{
     let expenseArray = localStorage.getItem("expenseArray");
-    if(list){
-      return JSON.parse(list);
+    if(expenseArray){
+      return JSON.parse(expenseArray);
     }
     else{
       return [];
@@ -23,9 +23,7 @@ function App() {
   })
   }
   
- useEffect(()=>{
-  addLocalStorage(event);
- },[expenses]);
+
    
   return (
     <div className="App">
