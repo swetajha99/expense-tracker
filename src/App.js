@@ -18,7 +18,7 @@ function App() {
    localStorage.setItem('datakey', JSON.stringify(expenses));
   }
  useEffect(()=>{
-  addLocalStorage();
+  addLocalStorage(event);
  },[expenses]);
    
   return (
