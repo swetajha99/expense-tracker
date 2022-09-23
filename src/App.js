@@ -13,8 +13,12 @@ function App() {
     return [expense, ...prevExpenses]
   })
   }
+  const addLocalStorage =(e)=>{
+   e.preventDefault();
+   localStorage.setItem('datakey', JSON.stringify(expenses));
+  }
  useEffect(()=>{
-  localStorage.setItem('datakey', JSON.stringify(expenses));
+  addLocalStorage();
  },[expenses]);
    
   return (
