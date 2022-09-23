@@ -3,7 +3,7 @@ import Expenses from './components/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 import { useState } from 'react';
 const expenseArray = [];
- localStorage.setItem('datakey', JSON.stringify(expenseArray));
+ 
 function App() {
   const[expenses, setExpenses] =useState(expenseArray)
 
@@ -13,7 +13,9 @@ function App() {
     return [expense, ...prevExpenses]
   })
   }
- 
+ useEffect(()=>{
+  localStorage.setItem('datakey', JSON.stringify(expenses));
+ },[expenses]);
    
   return (
     <div className="App">
