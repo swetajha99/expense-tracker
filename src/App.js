@@ -22,7 +22,9 @@ function App() {
     return [expense, ...prevExpenses]
   })
   }
-  
+    useEffect(()=>{
+    localStorage.setItem("expenseArray", JSON.stringify(expenses));
+  }, [expenses]);
 
    
   return (
