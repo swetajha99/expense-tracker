@@ -2,9 +2,18 @@ import './App.css';
 import Expenses from './components/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 import { useState,useEffect } from 'react';
-const expenseArray = [];
+
  
 function App() {
+   const getLocalItem = () =>{
+    let expenseArray = localStorage.getItem("expenseArray");
+    if(list){
+      return JSON.parse(list);
+    }
+    else{
+      return [];
+    }
+  }
   const[expenses, setExpenses] =useState(expenseArray)
 
   const addExpenses = (expense) => { 
@@ -13,10 +22,7 @@ function App() {
     return [expense, ...prevExpenses]
   })
   }
-  const addLocalStorage =(e)=>{
-   e.preventDefault();
-   localStorage.setItem('datakey', JSON.stringify(expenses));
-  }
+  
  useEffect(()=>{
   addLocalStorage(event);
  },[expenses]);
