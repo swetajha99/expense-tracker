@@ -14,7 +14,7 @@ function App() {
       return [];
     }
   }
-  const[expenses, setExpenses] =useState(expenseArray)
+  const[expenses, setExpenses] =useState(getLocalItem)
 
   const addExpenses = (expense) => { 
   //  setExpenses([expense,...expenses]);
